@@ -9,6 +9,17 @@ if (!isset($username)) {
   header('location: ../index.php');
 }
 
+
+$get1 = mysqli_query($db, "select * from DataSiswa where Sekolah = 'SMK GLOBAL SURYA PRATAMA'");
+$count1 = mysqli_num_rows($get1);
+
+$get2 = mysqli_query($db, "select * from DataSiswa where Sekolah = 'SMK PIJAR ALAM 1'");
+$count2 = mysqli_num_rows($get2);
+
+$get3 = mysqli_query($db, "select * from DataSiswa where Sekolah = 'SMK PIJAR ALAM 2'");
+$count3 = mysqli_num_rows($get3);
+
+
 $select = mysqli_query($db, "SELECT * FROM Admin WHERE Username = '$username'") or die('query failed');
 if (mysqli_num_rows($select) > 0) {
   $fetch = mysqli_fetch_assoc($select);
@@ -20,6 +31,8 @@ if (isset($_POST['logout'])) {
   session_destroy();
   header('location: ../index.php');
 }
+
+
 
 ?>
 
@@ -169,7 +182,7 @@ if (isset($_POST['logout'])) {
                 <div class="inner">
                   <h4>SMK Global Surya Pratama</h4>
                   <p>Siswa Global Surya Pratama</p>
-                  <h3>64</h3>
+                  <h3><?= $count1; ?></h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person"></i>
@@ -179,20 +192,6 @@ if (isset($_POST['logout'])) {
             </div>
             <!-- ./col -->
 
-            <div class="col-lg-3 col-6">
-              <!-- small box -->
-              <div class="small-box bg-warning">
-                <div class="inner">
-                  <h4>SMK Pijar Alam 1</h4>
-                  <p>Siswa SMK Pijar Alam 1</p>
-                  <h3>64</h3>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
             <!-- ./col -->
 
             <div class="col-lg-3 col-6">
@@ -201,7 +200,7 @@ if (isset($_POST['logout'])) {
                 <div class="inner">
                   <h4>SMK Pijar Alam 2</h4>
                   <p>Siswa SMK Pijar Alam 2</p>
-                  <h3>64</h3>
+                  <h3><?= $count3; ?></h3>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person"></i>

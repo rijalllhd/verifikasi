@@ -70,7 +70,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-                header("location: datasiswa.php");
+               
+                
+
+                echo "<script>
+                        alert('Data berhasil ditambah!');
+                        document.location.href = 'datasiswa.php';
+                    </script>";
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -122,9 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <div class="form-group <?php echo (!empty($sekolah_err)) ? 'has-error' : ''; ?>">
                             <label>Sekolah</label>
                             <select name="sekolah" id="sekolah" class=" form-control">
-                                <option value="" >-Nama Sekolah-</option>
+                                <option value="" disabled>-Nama Sekolah-</option>
                                 <option value="SMK GLOBAL SURYA PRATAMA" <?php if ($sekolah == "SMK GLOBAL SURYA PRATAMA") echo "selected" ?> >SMK Global Surya Pratama</option>
-                                <option value="SMK PIJAR ALAM 1" <?php if ($sekolah == "SMK PIJAR ALAM 1") echo "selected" ?> >SMK PIJAR ALAM 1</option>
+                                <!-- <option value="SMK PIJAR ALAM 1" <?php if ($sekolah == "SMK PIJAR ALAM 1") echo "selected" ?> >SMK PIJAR ALAM 1</option> -->
                                 <option value="SMK PIJAR ALAM 2" <?php if ($sekolah == "SMK PIJAR ALAM 2") echo "selected" ?> >SMK PIJAR ALAM 2</option>
                             </select>
                             <span class="help-block"><?php echo $sekolah_err;?></span>
@@ -140,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $nisn_err;?></span>
                         </div>
                         <input type="submit" name='submit' class="btn btn-success" value="Submit">
-                        <a href="/datasiswa.php" class="btn btn-default">Cancel</a>
+                        <a href="datasiswa.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>

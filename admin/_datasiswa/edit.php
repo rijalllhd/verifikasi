@@ -106,11 +106,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Id"])) {
                         </div>
                         <div class="form-group <?php echo (!empty($sekolah_err)) ? 'has-error' : ''; ?>">
                             <label>Sekolah</label>
-                            <select name="sekolah" id="sekolah" class=" form-control">
-                                <option value="" >-Nama Sekolah-</option>
-                                <option value="SMK GLOBAL SURYA PRATAMA" <?php if ($sekolah == "SMK GLOBAL SURYA PRATAMA") echo "selected" ?> >SMK Global Surya Pratama</option>
-                                <option value="SMK PIJAR ALAM 1" <?php if ($sekolah == "SMK PIJAR ALAM 1") echo "selected" ?> >SMK PIJAR ALAM 1</option>
-                                <option value="SMK PIJAR ALAM 2" <?php if ($sekolah == "SMK PIJAR ALAM 2") echo "selected" ?> >SMK PIJAR ALAM 2</option>
+                            <select name="Sekolah" id="sekolah" class=" form-control">
+                                <option value="" disabled>-Nama Sekolah-</option>
+                                <option value="SMK GLOBAL SURYA PRATAMA" ?> >SMK Global Surya Pratama</option>
+                                <!-- <option value="SMK PIJAR ALAM 1" ?> >SMK PIJAR ALAM 1</option> -->
+                                <option value="SMK PIJAR ALAM 2" ?> >SMK PIJAR ALAM 2</option>
                             </select>
                             <span class="help-block"><?php echo $sekolah_err;?></span>
                         </div>
