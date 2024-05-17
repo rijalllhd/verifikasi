@@ -191,9 +191,9 @@ if (isset($_POST['logout'])) {
                       echo "<td>" . $row['Tour'] . "</td>";
                       echo "<td>" . $row['Total'] . "</td>";
                       echo "<td>";
-                      echo "<a href='read.php?id=" . $row['Id'] . "' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";
-                      echo "<a href='update.php?id=" . $row['Id'] . "' title='Update Record' data-toggle='tooltip'><span class='fa fa-pen'></span></a>";
-                      echo "<a href='delete.php?id=" . $row['Id'] . "' title='Delete Record' data-toggle='tooltip'><span class='fa fa-trash'></span></a>";
+                      echo "<a href='read.php?Id=" . $row['Id'] . "' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";
+                      echo "<a href='edit.php?Id=" . $row['Id'] . "' title='Update Record' data-toggle='tooltip'><span class='fa fa-pen'></span></a>";
+                      echo "<a href='delete.php?Id=" . $row['Id'] . "' title='Delete Record' data-toggle='tooltip'><span class='fa fa-trash'></span></a>";
                       echo "</td>";
                       echo "</tr>";
                     }

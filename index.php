@@ -60,9 +60,9 @@ if(isset($_POST['submit'])){
             <!--card-header-->
             <div class="card-header text-center">
                 <h3 class="fw-bold">INFORMASI KELULUSAN SISWA</h3>
-                <img src="/build/img/pijar/logo_pijaralam.png" 
+                <img src="build/img/pijar/logo_pijaralam.png" 
                 alt="Pijar Alam Logo" width="100">
-                <img src="/build/img/gsp/gsp.png" 
+                <img src="build/img/gsp/gsp.png" 
                 alt="gsp Logo" width="100">
                 <br>
                 <br>
