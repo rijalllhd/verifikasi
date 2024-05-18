@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Id"])) {
         $SPP2122 = $datasiswa["SPP2122"];
         $PPDB2122 = $datasiswa["PPDB2122"];
         $Tour = $datasiswa["Tour"];
-        $Total = $datasiswa["Total"];
+        $LKS = $datasiswa["LKS"];
+        $Total = $UjianXIITP2324 + $SPP2324 + $SPP2223 + $SPP2122 + $PPDB2122 + $Tour + $LKS;
     
     
         $sql = "UPDATE DataSiswa SET 
@@ -39,11 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Id"])) {
             NOInduk = '$NOInduk',
             NISN = '$NISN',
             UjianXIITP2324 = '$UjianXIITP2324',
-            SPP2324 = 'SPP2324',
+            SPP2324 = '$SPP2324',
             SPP2223 = '$SPP2223',
             SPP2122 = '$SPP2122',
             PPDB2122 = '$PPDB2122',
             Tour = '$Tour',
+            LKS = '$LKS',
             Total = '$Total'
     
             WHERE Id = $Id";
@@ -109,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Id"])) {
                             <select name="Sekolah" id="sekolah" class=" form-control">
                                 <option value="" disabled>-Nama Sekolah-</option>
                                 <option value="SMK GLOBAL SURYA PRATAMA" ?> >SMK Global Surya Pratama</option>
-                                <!-- <option value="SMK PIJAR ALAM 1" ?> >SMK PIJAR ALAM 1</option> -->
+                                <option value="SMK PIJAR ALAM 1" ?> >SMK PIJAR ALAM 1</option>
                                 <option value="SMK PIJAR ALAM 2" ?> >SMK PIJAR ALAM 2</option>
                             </select>
                             <span class="help-block"><?php echo $sekolah_err;?></span>
@@ -150,14 +152,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["Id"])) {
                             <span class="help-block"><?php echo $PPDB2122_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($Tour_err)) ? 'has-error' : ''; ?>">
-                            <label>Touris</label>
+                            <label>Tour</label>
                             <input type="text" name="Tour" class="form-control" value="<?php echo htmlspecialchars($datasiswa["Tour"]); ?>">
                             <span class="help-block"><?php echo $Tour_err;?></span>
                         </div>
                         <div class="form-group <?php echo (!empty($Total_err)) ? 'has-error' : ''; ?>">
-                            <label>Total</label>
-                            <input type="text" name="Total" class="form-control" value="<?php echo htmlspecialchars($datasiswa["Total"]); ?>">
-                            <span class="help-block"><?php echo $Total_err;?></span>
+                            <label>LKS</label>
+                            <input type="text" name="LKS" class="form-control" value="<?php echo htmlspecialchars($datasiswa["LKS"]); ?>">
+                            <span class="help-block"><?php echo $LKS_err;?></span>
                         </div>
                         <input type="submit" name='submit' class="btn btn-success" value="Submit">
                         <a href="datasiswa.php" class="btn btn-default">Cancel</a>

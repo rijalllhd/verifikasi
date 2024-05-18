@@ -189,6 +189,7 @@ if (isset($_POST['logout'])) {
                       echo "<td>" . $row['SPP2122'] . "</td>";
                       echo "<td>" . $row['PPDB2122'] . "</td>";
                       echo "<td>" . $row['Tour'] . "</td>";
+                      echo "<td>" . $row['LKS'] . "</td>";
                       echo "<td>" . $row['Total'] . "</td>";
                       echo "<td>";
                       echo "<a href='read.php?Id=" . $row['Id'] . "' title='View Record' data-toggle='tooltip'><span class='fa fa-eye'></span></a>";

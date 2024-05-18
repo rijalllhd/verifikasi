@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before inserting in database
     if(empty($nama_err) && empty($kelas_err) && empty($sekolah_err) && empty($induk_err) && empty($nisn_err)){
         // Prepare an insert statement
-        $sql = "INSERT INTO DataSiswa (`Id`, `Nama`, `Kelas`, `Sekolah`, `NOInduk`, `NISN`, `UjianXIITP2324`, `SPP2324`, `SPP2223`, `SPP2122`, `PPDB2122`, `Tour`, `Total`) VALUES (NULL, ?, ?, ?, ?, ?, '', '', '', '', '', '', '')";
+        $sql = "INSERT INTO DataSiswa (`Id`, `Nama`, `Kelas`, `Sekolah`, `NOInduk`, `NISN`, `UjianXIITP2324`, `SPP2324`, `SPP2223`, `SPP2122`, `PPDB2122`, `Tour`, `LKS`, `Total`) VALUES (NULL, ?, ?, ?, ?, ?, '', '', '', '', '', '', '', '')";
 
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -70,9 +70,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Records created successfully. Redirect to landing page
-               
-                
-
                 echo "<script>
                         alert('Data berhasil ditambah!');
                         document.location.href = 'datasiswa.php';
@@ -130,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <select name="sekolah" id="sekolah" class=" form-control">
                                 <option value="" disabled>-Nama Sekolah-</option>
                                 <option value="SMK GLOBAL SURYA PRATAMA" <?php if ($sekolah == "SMK GLOBAL SURYA PRATAMA") echo "selected" ?> >SMK Global Surya Pratama</option>
-                                <!-- <option value="SMK PIJAR ALAM 1" <?php if ($sekolah == "SMK PIJAR ALAM 1") echo "selected" ?> >SMK PIJAR ALAM 1</option> -->
+                                <option value="SMK PIJAR ALAM 1" <?php if ($sekolah == "SMK PIJAR ALAM 1") echo "selected" ?> >SMK PIJAR ALAM 1</option>
                                 <option value="SMK PIJAR ALAM 2" <?php if ($sekolah == "SMK PIJAR ALAM 2") echo "selected" ?> >SMK PIJAR ALAM 2</option>
                             </select>
                             <span class="help-block"><?php echo $sekolah_err;?></span>
